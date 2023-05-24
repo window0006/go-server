@@ -43,7 +43,8 @@ func Logs() gin.HandlerFunc {
 		statusCode := c.Writer.Status()
 		clientIP := c.ClientIP()
 
-		businessResult := c.Writer.(*CustomResponseWriter).responseBody
+		cw := c.Writer.(*CustomResponseWriter) // 断言为 CustomResponseWriter 类型
+		businessResult := cw.responseBody
 		if businessResult == nil {
 			businessResult = &apis.ResponseBody{}
 		}
