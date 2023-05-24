@@ -4,8 +4,8 @@ import (
 	"os"
 
 	"github.com/gin-gonic/gin"
-	"github.com/window0006/go-server/apis"
 	"github.com/window0006/go-server/middlewares"
+	"github.com/window0006/go-server/routers"
 )
 
 func main() {
@@ -24,10 +24,7 @@ func main() {
 	router.Use(middlewares.Logs())
 	router.Use(middlewares.Recovery())
 	// 路由
-	router.GET("/", func(context *gin.Context) {
-		data := apis.PrintHelloworld()
-		context.JSON(200, data)
-	})
+	routers.SetupRouter(router)
 
 	router.Run(":8080")
 }
