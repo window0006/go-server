@@ -9,4 +9,5 @@ func Family(router *gin.Engine) {
 	familyController := &controllers.Family{}
 	familyRoot := router.Group("/family")
 	familyRoot.GET("/list", familyController.List)
+	familyRoot.POST("/create", familyController.Create)
 }
