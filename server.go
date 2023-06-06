@@ -4,6 +4,7 @@ import (
 	"os"
 
 	"github.com/gin-gonic/gin"
+	"github.com/window0006/go-server/dao/entity"
 	"github.com/window0006/go-server/middlewares"
 	"github.com/window0006/go-server/routers"
 )
@@ -18,7 +19,8 @@ func main() {
 		gin.SetMode(gin.ReleaseMode)
 	}
 
-	// 中间件
+	entity.DB.Init()
+
 	router.Use(middlewares.Request())
 	router.Use(middlewares.Response())
 	router.Use(middlewares.Logs())
