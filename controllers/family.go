@@ -11,7 +11,6 @@ import (
 type Family struct{}
 
 func (f *Family) List(c *gin.Context) {
-	// TODO 从数据库中获取 famliy 列表
 	var query bindings.FamilyListQuery
 	err := c.ShouldBindQuery(&query)
 	if err != nil {

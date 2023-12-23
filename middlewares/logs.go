@@ -81,6 +81,6 @@ func Logs() gin.HandlerFunc {
 		logFn("request handled") // 此时才会写入日志文件
 
 		consolelog.SetOutput(consolelogFn)
-		consolelog.Printf("[%s] - %v", startTime.Format("2006-01-02T15:04:05.000"), logTextCont)
+		consolelog.Printf("%s|%v", startTime.Format("2006-01-02T15:04:05.000"), logTextCont)
 	}
 }

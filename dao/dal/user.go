@@ -1,9 +1,9 @@
 package dal
 
 type User struct {
-	ID     uint   `json:"id"`
-	Name   string `json:"name"`
-	Gender string `json:"gender"`
-	Phone  string `json:"phone"`
-	Email  string `json:"email"`
+	ID     uint   `gorm:"primary_key;auto_increment" json:"id"`
+	Name   string `gorm:"column:name" json:"name"`
+	Gender string `gorm:"column:gender" json:"gender"`
+	Phone  string `gorm:"column:phone" json:"phone"`
+	Email  string `gorm:"column:email" json:"email"`
 }

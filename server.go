@@ -19,7 +19,7 @@ func main() {
 		gin.SetMode(gin.ReleaseMode)
 	}
 
-	entity.DB.Init()
+	entity.DB.NewDBGroup()
 
 	router.Use(middlewares.Request())
 	router.Use(middlewares.Response())

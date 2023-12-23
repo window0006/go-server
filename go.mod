@@ -3,6 +3,7 @@ module github.com/window0006/go-server
 go 1.18
 
 require (
+	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/gin-gonic/gin v1.9.0
 	github.com/google/uuid v1.3.0
 	github.com/sirupsen/logrus v1.9.2

@@ -26,8 +26,7 @@ func (cw *CustomResponseWriter) Write(data []byte) (int, error) {
 func Response() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		// 存到 context 中
-		var responseBody apis.ResponseBody
-		c.Writer = &CustomResponseWriter{c.Writer, &responseBody}
+		c.Writer = &CustomResponseWriter{c.Writer, &apis.ResponseBody{}}
 		c.Next()
 	}
 }

@@ -15,7 +15,7 @@ type DBGroup struct {
 }
 
 // DB 配置
-func (dbGruop *DBGroup) Init() {
+func (dbGruop *DBGroup) NewDBGroup() {
 	// 主库
 	dbGruop.Master = dbGruop.InitMaster()
 
